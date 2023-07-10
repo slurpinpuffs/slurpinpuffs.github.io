@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="UTF-16">
+		<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,400;0,700;1,600&display=swap" rel="stylesheet">
+		
+		<link href="styles.css" rel="stylesheet" type="text/css">
+
+		<title>Check Out These Buns!</title>
+	</head>
+	
+	<body>
+		<div class="wrapper">
+			<header>
+				<img class="logo" src="bun_icon.png" alt="A steamed bun with a smiley face.">
+				<h1>Check Out<br>These Buns!</h1>
+				<nav>
+					<ul>
+						<li><a href="index.htm">Home</a></li>
+						<li><a href="history.htm">History</a></li>
+						<li><a href="recipe.htm">Recipe</a></li>
+						<li><a href="quiz.htm">Quiz</a></li>
+					</ul>
+				</nav>
+			</header>
+			<form method="post" action="form_handler.php">
+				<fieldset>
+					<legend>Which bao are you?</legend><br>
+					
+					<label class="form_p"" for="fname">What's your name?</label>
+						<input type="text" name="name" required /><br>
+						
+					<p class="form_p">Do you love spicy food?</p>
+						<input type="radio" id="Yes" name="spicy" value="Yes">
+							<label for="Yes">Yes</label><br>
+						<input type="radio" id="No" name="spicy" value="No">
+							<label for="No">No</label><br>
+						<input type="radio" id="Sometimes" name="spicy" value="Sometimes">
+							<label for="Sometimes">Sometimes</label><br>
+					
+					<p class="form_p">Choose some of your favorite fillings:</p>
+						<input type="checkbox" id="Pork" name="Pork" value="Pork">
+							<label for="Pork">Pork</label><br>
+						<input type="checkbox" id="Custard" name="Custard" value="Custard">
+							<label for="Custard">Custard</label><br>
+						<input type="checkbox" id="Beef" name="Beef" value="Beef">
+							<label for="Beef">Beef</label><br>
+						<input type="checkbox" id="Tofu" name="Tofu" value="Tofu">
+							<label for="Tofu">Tofu</label><br>
+						<input type="checkbox" id="Lotus Seed" name="Lotus Seed" value="Lotus Seed">
+							<label for="Lotus Seed">Lotus Seed</label><br>
+						<input type="checkbox" id="Black Sesame" name="Black Sesame" value="Black Sesame">
+							<label for="Black Sesame">Black Sesame</label><br>
+						<input type="checkbox" id="Broth" name="Broth" value="Broth">
+							<label for="Broth">Broth</label><br>
+						<input type="checkbox" id="Veggies" name="Veggies" value="Veggies">
+							<label for="Veggies">Veggies</label><br>
+							
+					<label for="travel" class="form_p">If you could travel anywhere right now, where would you go?</label><br>
+						<select id="travel" name="travel">
+							<option value="#">Choose:</option>
+							<option value="Norway">Norway</option>
+							<option value="Japan">Japan</option>
+							<option value="Hong Kong">Hong Kong</option>
+							<option value="Malaysia">Malaysia</option>
+							<option value="Mainland China">Mainland China</option>
+							<option value="Greenland">Greenland</option>
+							<option value="France">France</option>
+							<option value="Morocco">Morocco</option>
+							<option value="Ethiopia">Ethiopia</option>
+							<option value="Mexico">Mexico</option>
+							<option value="Portugal">Portugal</option>
+							<option value="Greece">Greece</option>
+							<option value="Nowhere">Nowhere</option>
+						</select><br><br>
+					
+					<label for="comments" class="form_p">Anything you'd like to say about our website?</label><br>
+						<textarea id="comments" name="comments" placeholder="Click here to add a comment."></textarea><br><br>
+					
+					<br><br>
+					<input type="submit" value="Click here to submit"/>
+					
+					<input type="reset"/>
+				</fieldset>
+			</form>
+			
+			<footer>
+				<img class="logo" src="bun_icon.png" alt="A steamed bun with a smiley face.">
+				<h1>Check Out<br>These Buns!</h1>
+				<p>This site is authored and maintained by Amani Medcroft. It is not an official website of the Maricopa County Community College District, and Maricopa is not responsible for the content of this site.</p>
+			</footer>
+		</div>
+	</body>
+</html>
