@@ -50,7 +50,8 @@ a{text-decoration:none;
 
 nav a{height:45px;
 	font-size:24px;
-	line-height:45px;
+	line-height:20px;
+	text-align:center;
 	display:flex;
 	padding:0 20px;}	
 				
