@@ -97,20 +97,21 @@ h2{margin:0;
 	margin:auto;}
 
 .game_img{
-	width:60%;
+	width:40%;
 	display:block;
 	margin:auto;}
 
 .game_title{
 	text-align:center;
 	margin:auto;
-	font-size:24px;}
+	font-size:30px;}
 
 .game_desc{
 	margin:auto;
 	text-align:center;
 	margin-top:0px;
 	padding-bottom:10px;
+	font-size:20px;
 	color:#ffbcf9;}
 
 .game_page_desc{
