@@ -150,6 +150,7 @@ section{width:70%;
 }
 
 .gallery_img{width:45%;
+	max-width:600px;
 	margin:10px 2% 10px 2.5%;}
 
 .game_page_img{width:49%;
