@@ -96,6 +96,11 @@ h2{margin:0;
 	display:block;
 	margin:auto;}
 
+#my_gaymes{
+	font-size:50px;
+	text-decoration: underline;
+}
+
 .game_img{
 	width:40%;
 	display:block;
@@ -110,7 +115,7 @@ h2{margin:0;
 	margin:auto;
 	text-align:center;
 	margin-top:0px;
-	padding-bottom:10px;
+	padding-bottom:60px;
 	font-size:20px;
 	color:#ffbcf9;}
 
@@ -139,14 +144,23 @@ section{width:70%;
 	background-repeat:no-repeat;
 	display:flex;}
 
-.game_page_img{width:49%;
+.top_section{
+	border-bottom:2px solid #f04089;
+	margin-bottom:30px;
+}
+
+.gallery_img{width:45%;
 	margin:10px 2% 10px 2.5%;}
 
-.btn {
+.game_page_img{width:49%;
+	margin:10px 2% 10px 2.5%;
+	object-fit:scale-down;}
+
+.btn{
 	border: 1px solid #f04089;
 	cursor: url('cursor_hover.png'), auto;}
 
-.btn:hover {
+.btn:hover{
 	background-color: #f04089;}
 	
 th, td{border:0px;
