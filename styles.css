@@ -129,10 +129,26 @@ h2{margin:0;
 	margin:10px 2% 10px 2.5%;
 	color:#ffbcf9;}
 
-.game_page_desc h1, .downloads h1{
+.game_page_desc h1{
 	font-size:40px;
 	padding-bottom:0px;
 	margin-bottom:0px;
+	text-decoration: underline;
+}
+
+.downloads h1{
+	font-size:34px;
+	padding-bottom:0px;
+	margin-bottom:0px;
+	text-decoration: underline;
+}
+
+.downloads h2{
+	padding-top:0px;
+}
+
+.side-by-side{
+	display:inline;
 }
 
 .game_page_desc p{
