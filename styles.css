@@ -254,6 +254,10 @@ footer p{width:50%;
 	color:black;
 }
 
+.blog_post a{
+	background-color:aliceblue;
+}
+
 .blog_img{
 	width:50%;
 }
