@@ -247,6 +247,7 @@ footer p{width:50%;
 	background-color:aliceblue;
 	border:6px outset #f04089;
 	padding:10px;
+	margin-bottom:20px;
 }
 
 .blog_post p, .blog_post ul, .blog_post li, .blog_post img, .blog_post h2, .blog_post h1, .blog_post h3, .blog_post b, .blog_post i{
