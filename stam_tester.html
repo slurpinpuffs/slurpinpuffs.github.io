@@ -1,0 +1,311 @@
+<html>
+    <head>
+        <title>Beyblade X Stamina Tester</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,400;0,700;1,600&display=swap" rel="stylesheet">
+        <link href="stam_styles.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <form>		
+            <p>Select a Beyblade:</p>
+			<!--<p>Layer:</p>-->
+			<select id="bx1-l" name="bx1-l">
+                <option value="Cobalt Drake" for="bx1-l">Cobalt Drake</option>
+                <option value="Dran Dagger" for="bx1-l">Dran Dagger</option>
+                <option value="Dran Sword" for="bx1-l">Dran Sword</option>
+                <option value="Dranzer Spiral" for="bx1-l">Dranzer Spiral</option>
+                <option value="Hell's Chain" for="bx1-l">Hell's Chain</option>
+                <option value="Hell's Scythe" for="bx1-l">Hell's Scythe</option>
+                <option value="Knight Lance" for="bx1-l">Knight Lance</option>
+                <option value="Knight Shield" for="bx1-l">Knight Shield</option>
+                <option value="Leon Claw" for="bx1-l">Leon Claw</option>
+                <option value="Phoenix Feather" for="bx1-l">Phoenix Feather</option>
+			    <option value="Phoenix Wing" for="bx1-l">Phoenix Wing</option>
+                <option value="Rhino Horn" for="bx1-l">Rhino Horn</option>
+                <option value="Shark Edge" for="bx1-l">Shark Edge</option>
+                <option value="Viper Tail" for="bx1-l">Viper Tail</option>
+                <option value="Wizard Arrow" for="bx1-l">Wizard Arrow</option>
+			    <option value="Wyvern Gale" for="bx1-l">Wyvern Gale</option>
+			</select> <br>
+
+            <!--<p>Ratchet:</p>-->
+			<select id="bx1-r" name="bx1-r">
+			    <option value="3-60" for="bx1-r">3-60</option>
+			    <option value="4-60" for="bx1-r">4-60</option>
+			    <option value="5-60" for="bx1-r">5-60</option>
+			    <option value="9-60" for="bx1-r">9-60</option>
+                <option value="3-80" for="bx1-r">3-80</option>
+                <option value="4-80" for="bx1-r">4-80</option>
+                <option value="5-80" for="bx1-r">5-80</option>
+			</select> <br>
+
+            <!--<p>Bit:</p>-->
+            <select id="bx1-b" name="bx1-b">
+                <option value="B" for="bx1-b">Ball</option>
+                <option value="F" for="bx1-b">Flat</option>
+                <option value="GB" for="bx1-b">Gear Ball</option>
+                <option value="GF" for="bx1-b">Gear Flat</option>
+                <option value="HN" for="bx1-b">High Needle</option>
+                <option value="HT" for="bx1-b">High Taper</option>
+                <option value="LF" for="bx1-b">Low Flat</option>
+                <option value="N" for="bx1-b">Needle</option>
+                <option value="O" for="bx1-b">Orb</option>
+                <option value="P" for="bx1-b">Point</option>
+                <option value="R" for="bx1-b">Rush</option>
+                <option value="S" for="bx1-b">Spike</option>
+                <option value="T" for="bx1-b">Taper</option>
+            </select>
+
+            <p>Special Condition (Optional):</p>
+            <input type="text" id="special" name="special">
+            <br>
+					
+			<input type="button" onclick="addBX()" value="Add Blade">
+		</form>
+
+        <table id="results_table">
+            <tr id="results_header_row">
+                <th></th>
+            </tr>
+            <tr>
+                <th>Spin 1</th>
+            </tr>
+            <tr>
+                <th>Spin 2</th>
+            </tr>
+            <tr>
+                <th>Spin 3</th>
+            </tr>
+            <tr>
+                <th>Spin 4</th>
+            </tr>
+            <tr>
+                <th>Spin 5</th>
+            </tr>
+            <tr>
+                <th>Spin 6</th>
+            </tr>
+            <tr>
+                <th>Spin 7</th>
+            </tr>
+            <tr>
+                <th>Spin 8</th>
+            </tr>
+            <tr>
+                <th>Spin 9</th>
+            </tr>
+            <tr>
+                <th>Spin 10</th>
+            </tr>
+            <tr id="average_row">
+                <th>AVERAGE</th>
+            </tr>
+        </table>
+        <input type="button" onclick="addRound()" value="Add Round">
+        
+        <p>Click on a table cell to select. Use the stopwatch to record spin time. "Enter Time" to add time to cell.</p>
+
+        <div class="wrapper">
+            <h2 id="stopwatch">Stopwatch</h2>
+            <p id="timer"><span id="minutes">00</span>:<span id="seconds">00</span>:<span id="tens">00</span></p>
+            <button id="button-start">Start</button>
+            <button id="button-stop">Stop</button>
+            <button id="button-reset">Reset</button>
+            <button id="button-submit">Enter Time</button>
+        </div>
+
+        <script>
+            let results_table = document.getElementById("results_table");
+            let selected_td;
+            let round = 10;
+            results_table.addEventListener("click", function(event){
+                var td = event.target;
+                while (td !== this && !td.matches("td")){
+                    td = td.parentNode;
+                }
+                if(td === this){
+                    console.log("No table cell found");
+                }else{
+                    selectTD(td);
+                    console.log(td.innerHTML);
+                    //td.setAttribute("class", "selected");
+                }
+            });
+
+            function addRound(){
+                round += 1;
+                let new_row = document.createElement("tr");
+                let new_header = document.createElement("th");
+                let results_body = results_table.children[0];
+                let avg_row = results_body.lastElementChild;
+                let data_cells = document.getElementsByClassName("test_data");
+                let highest_col = 0;
+
+                new_header.appendChild(document.createTextNode(`Spin ${round}`));
+                new_row.appendChild(new_header);
+
+                for(let curr = 0; curr < data_cells.length; curr++){
+                    if(data_cells[curr].cellIndex > highest_col){
+                        highest_col = data_cells[curr].cellIndex;
+                    }
+                }
+                console.log(highest_col);
+
+                for(let col = 0; col < highest_col; col++){
+                    var td = document.createElement("td");
+                    td.setAttribute("class", "test_data");
+                    td.appendChild(document.createTextNode("Empty"));
+
+                    new_row.appendChild(td);
+                }
+
+                results_body.insertBefore(new_row, avg_row);
+            }
+
+            function addBX(){
+                let table_rows = document.getElementsByTagName("tr");
+                let results_header = document.getElementById("results_header_row");
+                let layer = document.getElementById("bx1-l").value;
+                let ratchet = document.getElementById("bx1-r").value;
+                let bit = document.getElementById("bx1-b").value;
+                let special = document.getElementById("special").value;
+                let bx = document.createElement("th");
+                if(special.length > 0){
+                    bx.appendChild(document.createTextNode(layer + " " + ratchet + bit + " (" + special + ")"));
+                }else{
+                    bx.appendChild(document.createTextNode(layer + " " + ratchet + bit));
+                }
+
+                results_header.appendChild(bx);
+
+                for(let curr = 1; curr < table_rows.length - 1; curr++){
+                    var td = document.createElement("td");
+                    td.setAttribute("class", "test_data");
+                    td.appendChild(document.createTextNode("Empty"));
+
+                    table_rows[curr].appendChild(td);
+                }
+
+                var avg_td = document.createElement("td");
+                avg_td.setAttribute("class", "average");
+                avg_td.appendChild(document.createTextNode("NULL"));
+
+                table_rows[table_rows.length - 1].appendChild(avg_td);
+            }
+
+            function selectTD(td){
+                if(selected_td != null){
+                    selected_td.classList.remove("selected");
+                }
+                selected_td = td;
+                selected_td.classList.add("selected");
+            }
+
+            function updateAverage(index){
+                var average_row = document.getElementById("average_row");
+                var data_cells = document.getElementsByClassName("test_data");
+                var total = 0;
+                var total_cells = 0;
+                var avg = 0;
+
+                for(let curr = 0; curr < data_cells.length; curr++){
+                    if((data_cells[curr].cellIndex == index) && data_cells[curr].innerHTML != "Empty"){
+                        let nums = data_cells[curr].innerHTML.split(":");
+                        total += parseInt(nums[0] * 60);
+                        total += parseInt(nums[1]);
+                        total_cells += 1;
+                    }
+                }
+
+                avg = total / total_cells;
+                avg = Math.round(avg);
+                let avg_minutes = Math.round(avg / 60);
+                let avg_seconds = avg % 60;
+
+                if(avg_minutes < 9){
+                    avg_minutes = "0" + avg_minutes;
+                }
+
+                if(avg_seconds < 9){
+                    avg_seconds = "0" + avg_seconds;
+                }
+                average_row.children[index].innerHTML = avg_minutes + ":" + avg_seconds;
+            }
+
+            var minutes = 0x0;
+            var seconds = 0x0; 
+            var tens = 0x0; 
+            var appendMinutes = document.getElementById("minutes");
+            var appendTens = document.getElementById("tens");
+            var appendSeconds = document.getElementById("seconds");
+            var buttonStart = document.getElementById('button-start');
+            var buttonStop = document.getElementById('button-stop');
+            var buttonReset = document.getElementById('button-reset');
+            var buttonSubmit = document.getElementById('button-submit');
+            var Interval;
+
+            buttonStart.onclick = function() {
+                
+                clearInterval(Interval);
+                Interval = setInterval(startTimer, 10);
+            }
+            
+                buttonStop.onclick = function() {
+                clearInterval(Interval);
+            }
+            
+
+            buttonReset.onclick = function() {
+                clearInterval(Interval);
+                tens = "00";
+                seconds = "00";
+                appendTens.innerHTML = tens;
+                appendSeconds.innerHTML = seconds;
+            }
+
+
+            buttonSubmit.onclick = function(){
+                if(selected_td != null){
+                    selected_td.innerHTML = appendMinutes.innerHTML + ":" + appendSeconds.innerHTML;
+                    updateAverage(selected_td.cellIndex);
+                }
+            }
+            
+            
+            function startTimer () {
+                tens++; 
+                
+                if(tens <= 9){
+                    appendTens.innerHTML = "0" + tens;
+                }
+                
+                if (tens > 9){
+                    appendTens.innerHTML = tens;
+                } 
+                
+                if (tens > 99) {
+                    console.log("seconds");
+                    seconds++;
+                    appendSeconds.innerHTML = "0" + seconds;
+                    tens = 0;
+                    appendTens.innerHTML = "0" + 0;
+                }
+                
+                if (seconds > 9){
+                    appendSeconds.innerHTML = seconds;
+                }
+
+                if(seconds > 59){
+                    seconds = 0;
+                    appendSeconds.innerHTML = "0" + seconds;
+                    minutes++
+                    appendMinutes.innerHTML = "0" + minutes;
+                }
+
+                if(minutes > 9){
+                    appendMinutes.innerHTML = minutes;
+                }
+            
+            }
+        </script>
+    </body>
+ </html>
