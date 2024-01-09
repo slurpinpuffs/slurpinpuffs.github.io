@@ -58,8 +58,7 @@ table, td, th{
     color:yellowgreen;
 }
 
-body{height: 100%;
-	min-width:1250px;}
+body{width: 80%;}
 
 #timer{
     font-size:40px;
@@ -70,4 +69,8 @@ body{height: 100%;
 #stopwatch{
     text-decoration: underline;
     margin-bottom: 0;
+}
+
+.timer_button{
+    min-height: 40px;
 }
