@@ -220,14 +220,14 @@
 
                 avg = total / total_cells;
                 avg = Math.round(avg);
-                let avg_minutes = Math.round(avg / 60);
+                let avg_minutes = Math.floor(avg / 60);
                 let avg_seconds = avg % 60;
 
-                if(avg_minutes < 9){
+                if(avg_minutes <= 9){
                     avg_minutes = "0" + avg_minutes;
                 }
 
-                if(avg_seconds < 9){
+                if(avg_seconds <= 9){
                     avg_seconds = "0" + avg_seconds;
                 }
                 average_row.children[index].innerHTML = avg_minutes + ":" + avg_seconds;
