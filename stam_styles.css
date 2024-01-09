@@ -71,28 +71,3 @@ body{height: 100%;
     text-decoration: underline;
     margin-bottom: 0;
 }
-
-/* tablet */	
-		
-@media screen and (max-width:1150px) {
-				
-    .text_pic img{max-height:100px;
-        margin-top:50px;}
-        
-    p {font-size:2vw;}	
-    
-    body{min-width:980px;}
-        
-    }
-    
-/* phone */
-    
-    @media screen and (max-width:980px) {
-
-        body{min-width:700px;}
-        
-        .text_pic img{max-height:75px;
-        margin-top:40px;
-        width:15%;}
-
-    }

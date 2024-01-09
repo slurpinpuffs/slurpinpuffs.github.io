@@ -7,6 +7,8 @@
     <body>
         <h1>Beyblade X Stamina Tester</h1>
         <h3>by slurpinpuffs</h3>
+
+        <!--<p>Select your parts and add a bey to the table. <br>Click on a table cell to select. <br>Use the stopwatch to record spin time. <br>"Enter Time" to record time in cell.</p>-->
         <form>		
             <p>Select a Beyblade:</p>
 			<!--<p>Layer:</p>-->
@@ -103,8 +105,6 @@
             </tr>
         </table>
         <input type="button" onclick="addRound()" value="Add Round">
-        
-        <p>Click on a table cell to select. Use the stopwatch to record spin time. "Enter Time" to record time in cell.</p>
 
         <div class="wrapper">
             <h2 id="stopwatch">Stopwatch</h2>
@@ -155,7 +155,7 @@
                 for(let col = 0; col < highest_col; col++){
                     var td = document.createElement("td");
                     td.setAttribute("class", "test_data");
-                    td.appendChild(document.createTextNode("Empty"));
+                    td.appendChild(document.createTextNode("Click to add"));
 
                     new_row.appendChild(td);
                 }
@@ -182,7 +182,7 @@
                 for(let curr = 1; curr < table_rows.length - 1; curr++){
                     var td = document.createElement("td");
                     td.setAttribute("class", "test_data");
-                    td.appendChild(document.createTextNode("Empty"));
+                    td.appendChild(document.createTextNode("Click to add"));
 
                     table_rows[curr].appendChild(td);
                 }
@@ -210,7 +210,7 @@
                 var avg = 0;
 
                 for(let curr = 0; curr < data_cells.length; curr++){
-                    if((data_cells[curr].cellIndex == index) && data_cells[curr].innerHTML != "Empty"){
+                    if((data_cells[curr].cellIndex == index) && data_cells[curr].innerHTML != "Click to add"){
                         let nums = data_cells[curr].innerHTML.split(":");
                         total += parseInt(nums[0] * 60);
                         total += parseInt(nums[1]);
