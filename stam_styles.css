@@ -7,6 +7,11 @@
     max-width: 32px;
 }
 
+#icon2{
+    max-width: 32px;
+    background-color: rgb(18, 0, 68);
+}
+
 select, input{
     border-color:white;
     font-size:20px;
@@ -23,8 +28,8 @@ h1, h3{
 
 h3{
     color:pink;
-    float:left;
     margin-right:10px;
+    float:left;
 }
 
 button{
