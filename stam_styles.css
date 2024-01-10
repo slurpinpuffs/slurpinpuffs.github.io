@@ -3,6 +3,10 @@
 	font-family: 'IBM Plex Sans Condensed', sans-serif;
     color:white;}
 
+#icon{
+    max-width: 32px;
+}
+
 select, input{
     border-color:white;
     font-size:20px;
@@ -19,6 +23,8 @@ h1, h3{
 
 h3{
     color:pink;
+    float:left;
+    margin-right:10px;
 }
 
 button{
