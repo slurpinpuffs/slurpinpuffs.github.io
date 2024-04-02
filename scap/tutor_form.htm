@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="icon" href="PhoenixACTSLogo.png" />
+		<meta charset="UTF-16">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+JP:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+		
+		<link href="styles.css?version=1" rel="stylesheet" type="text/css">
+
+		<title>Phoenix ACTS</title>
+
+	</head>
+	
+	<body>
+		<div class="wrapper">
+			<header>
+				<div class="image_txt_container">
+					<img class="logo" src="PhoenixACTSLogo.png">
+
+					<div>
+						<h1 class="name">Phoenix ACTS</h1>
+						<h2 class="subtitle">Bright smiles, brighter futures</h2>
+					</div>
+				</div>
+				
+				<nav>
+					<ul>
+						<li><a href="index.htm">Home</a></li>
+						<li><a href="about.htm">About Us</a></li>
+						<li><a href="tutor_form.htm">Tutoring</a></li>
+						<li><a href="schedule.htm">Schedule</a></li>
+					</ul>
+				</nav>
+			</header>
+
+            <main>
+                <div class="image_txt_container home_banner">
+					<div class="banner_txt">
+						<h1>Tutoring</h1>
+						<h2>Schedule a 1-on-1 tutoring session for your child at Phoenix Children's Hospital</h2>
+					</div>
+					<img src="hospital_tutor3.jpg" class="banner_pic">
+				</div>
+                <form method="post" action="form_handler.php">
+                    <fieldset>
+                        <legend>Schedule a Session</legend><br>
+                        
+                        <label class="form_p" for="child_fname">Child's first name:</label>
+                            <input type="text" name="name" placeholder="Jimmy" required/>
+                        <label class="form_p" for="child_lname">Child's last name:</label>
+                            <input type="text" name="name" placeholder="Smith" required/><br>
+
+                        <label class="form_p" for="guard_fname">Guardian's first name:</label>
+                            <input type="text" name="name" placeholder="John" required />
+                        <label class="form_p" for="guard_lname">Guardian's last name:</label>
+                            <input type="text" name="name" placeholder="Smith" required/><br>
+
+                        <label for="phone_num">Guardian's phone number:</label>
+                            <input type="text" name="phone_num" placeholder="(xxx) xxx-xxxx">
+                        <label for="email">Guardian's email address:</label>
+                            <input type="text" name="email" placeholder="johnsmith@gmail.com"><br>
+
+                        <label for="room">Child's room number:</label>
+                            <input type="text" name="room" placeholder="Room 101">
+                            
+                        <p class="form_p">What grade is your child in?</p>
+                            <select id="travel" name="travel">
+                                <option value="#">Choose:</option>
+                                <option value="kinder">Kindergarten</option>
+                                <option value="1st">1st grade</option>
+                                <option value="2nd">2nd grade</option>
+                                <option value="3rd">3rd grade</option>
+                                <option value="4th">4th grade</option>
+                                <option value="5th">5th grade</option>
+                                <option value="8th">6th grade</option>
+                                <option value="7th">7th grade</option>
+                                <option value="8th">8th grade</option>
+                                <option value="9th">9th grade</option>
+                                <option value="10th">10th grade</option>
+                                <option value="11th">11th grade</option>
+                                <option value="12th">12th grade</option>
+                            </select>
+                        
+                        <p class="form_p">Which subjects would you like tutoring for?</p>
+                            <input type="checkbox" id="Pork" name="Pork" value="Pork">
+                                <label for="Pork">Math</label><br>
+                            <input type="checkbox" id="Custard" name="Custard" value="Custard">
+                                <label for="Custard">History</label><br>
+                            <input type="checkbox" id="Beef" name="Beef" value="Beef">
+                                <label for="Beef">Science</label><br>
+                            <input type="checkbox" id="Veggie" name="Veggie" value="Veggie">
+                                <label for="Veggie">English</label><br>
+                            <input type="checkbox" id="Tofu" name="Tofu" value="Tofu">
+                                <label for="Tofu">Geography</label><br>
+                            <input type="checkbox" id="Lotus Seed" name="Lotus Seed" value="Lotus Seed">
+                                <label for="Lotus Seed">Art</label><br>
+                            <input type="checkbox" id="Black Sesame" name="Black Sesame" value="Black Sesame">
+                                <label for="Black Sesame">All of the above</label><br>
+
+                        <p class="form_p">Do you have a preferred tutor?</p>
+                        <select id="travel" name="travel">
+                            <option value="#">No preference</option>
+                            <option value="1">Aaron Irby</option>
+                            <option value="2">Amani Medcroft</option>
+                            <option value="3">Angelica Hazel Verdin</option>
+                        </select><br><br>
+                        
+                        <label for="comments" class="form_p">Does your child have any special education needs, developmental disabilities, or other things you'd like us to know?</label><br>
+                            <textarea id="comments" name="comments" placeholder="Click here to add extra notes."></textarea><br>
+                        
+                        <p class="form_p">Please select an available time slot (tutoring available Monday-Wednesday):</p>
+                            <select id="travel" name="travel">
+                                <option value="#">Choose:</option>
+                                <option value="1">Monday 10am-11am (1h)</option>
+                                <option value="2">Monday 12pm-1pm (1h)</option>
+                                <option value="3">Monday 12pm-2pm (2h)</option>
+                                <option value="4">Monday 1:30pm-2:30pm (1h)</option>
+                                <option value="5">Tuesday 8am-9:30am (1.5h)</option>
+                                <option value="6">Tuesday 9am-10am (1h)</option>
+                                <option value="7">Tuesday 11am-1pm (2h)</option>
+                                <option value="8">Tuesday 1:30pm-2:30pm (1h)</option>
+                                <option value="9">Tuesday 2pm-3pm (1h)</option>
+                                <option value="9">Tuesday 2pm-4pm (2h)</option>
+                                <option value="10">Wednesday 8am-9:30am (1.5h)</option>
+                                <option value="11">Wednesday 9am-10am (1h)</option>
+                                <option value="12">Wednesday 10am-11am (1h)</option>
+                                <option value="13">Wednesday 12pm-1pm (1h)</option>
+                                <option value="14">Wednesday 12pm-2pm (2h)</option>
+                                <option value="15">Wednesday 1:30pm-2:30pm (1h)</option>
+                                <option value="16">Wednesday 2pm-3pm (1h)</option>
+                                <option value="17">Wednesday 2pm-4pm (2h)</option>
+                            </select><br><br>
+
+                        <input type="submit" value="Click here to submit"/>
+                        
+                        <input type="reset"/>
+                    </fieldset>
+                </form>
+            </main>
+			
+			<footer>
+				<p class="sponsor_txt">Proudly sponsored by:</p>
+				<div class="sponsor_footer">
+					<img src="walmart_logo.png" id="walmart_logo">
+					<img src="costco_logo.png">
+				</div>
+
+				<div class="footer_txt">
+					<p class="location"><a href="https://maps.app.goo.gl/QaKFR6p94fYxChrw5">4700 E Thomas Rd<br>Ste 202<br>Phoenix, AZ 85018</a></p>
+					<p>This site is authored and maintained by Amani Medcroft. It is not an official website of the Maricopa County Community College District, and Maricopa is not responsible for the content of this site.</p>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>
