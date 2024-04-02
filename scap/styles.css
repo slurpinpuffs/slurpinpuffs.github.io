@@ -178,6 +178,14 @@
 				margin-right: 40px;
 				margin-top: 0px;
 			}
+
+			.donation{
+				max-width: 30%;
+				float:right;
+				margin-top: 10px;
+				margin-left: 10px;
+				margin-right: 10px;
+			}
 				
 		/* tablet */	
 		
